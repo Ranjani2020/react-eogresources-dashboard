@@ -18,6 +18,6 @@ Working on/Issues:
 -Properly filter metrics with 30 minute time intervals
 
 # How to use
-Once cloned, locate to your project folder and run the command$ npm i && npm start
+Once cloned, locate to your project folder in terminal and run the command$ npm i && npm start
 
 :):)
