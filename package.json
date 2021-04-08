@@ -1,0 +1,56 @@
+{
+  "name": "react-eogresources-dashboard",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^4.11.3",
+    "@material-ui/icons": "^4.11.2",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "apollo-boost": "^0.4.9",
+    "apollo-link": "^1.2.14",
+    "apollo-link-ws": "^1.0.20",
+    "graphql": "^15.5.0",
+    "isomorphic-fetch": "^3.0.0",
+    "keyboardjs": "^2.6.4",
+    "react": "^17.0.2",
+    "react-apollo": "^3.1.5",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.3",
+    "react-scripts": "^4.0.3",
+    "react-toastify": "^7.0.3",
+    "react-use": "^17.2.3",
+    "rebound": "^0.1.0",
+    "recharts": "^2.0.9",
+    "redux": "^4.0.5",
+    "redux-saga": "^1.1.3",
+    "subscriptions-transport-ws": "^0.9.18",
+    "urql": "^2.0.2",
+    "web-vitals": "^1.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
