@@ -29,6 +29,9 @@
     "urql": "^2.0.2",
     "web-vitals": "^1.0.1"
   },
+  "devDependencies": {
+    "redux-devtools-extension": "^2.13.9"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
