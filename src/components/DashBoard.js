@@ -15,11 +15,11 @@ import {
   subscriptionExchange
 } from "urql";
 import Item from "./Item"
-
+import ChartContainer from "./ChartContainer"
 
 const useStyles = makeStyles({
   card: {
-    marginTop: "2rem"
+    marginTop: "1rem"
   }
 });
 
@@ -63,19 +63,16 @@ const handleSubscription = (measurements = [], response) => {
   return [response.newMeasurement, ...measurements];
 };
 
+const filterData = (data, metric) => {
+  return data.filter(measurement => measurement.metric === metric);
+}
+
 const getMetricData = (data, metric) => {
-  const filteredData = data.filter(measurement => measurement.metric === metric);
+  const filteredData = filterData(data, metric);
   return filteredData.slice(0, 1).map(measurement => measurement.value);
 }
 
-export default (props) => {
-  return (
-    <Provider value={client}>
-      <Dashboard {...props} />
-    </Provider>
-  );
-};
-
+var selectedMetric = "";
 
 
 const Dashboard = (props) => {
@@ -129,29 +126,50 @@ const Dashboard = (props) => {
           <Item
             textPrimary={"Tubing Pressure"}
             textSecondary={`${tpData} PSI`}
+            onClick={() => selectedMetric = "tubingPressure"}
           />
           <Item
             textPrimary={"Casing Pressure"}
             textSecondary={`${cpData} PSI`}
+            onClick={() => selectedMetric = "casingPressure"}
           />
           <Item
             textPrimary={"Oil Temp"}
             textSecondary={`${otData} F`}
+            onClick={() => selectedMetric = "oilTemp"}
           />
           <Item
             textPrimary={"Flare Temp"}
             textSecondary={`${ftData} F`}
+            onClick={() => selectedMetric = "flareTemp"}
           />
           <Item
             textPrimary={"Water Temp"}
             textSecondary={`${wtData} F`}
+            onClick={() => selectedMetric = "waterTemp"}
           />
           <Item
             textPrimary={"injValve Open"}
             textSecondary={`${injValveData} %`}
+            onClick={() => selectedMetric = "injValveOpen"}
           />
         </Grid>
+
+        {selectedMetric && <ChartContainer selectedMetric={selectedMetric} query={result.data} data={filterData(res.data, selectedMetric)} />}
+
+
       </Container>
     </Box>
   );
 };
+
+const DashBoardComp = (props) => {
+  return (
+    <Provider value={client}>
+      <Dashboard {...props} />
+    </Provider>
+  );
+};
+
+export default DashBoardComp;
+

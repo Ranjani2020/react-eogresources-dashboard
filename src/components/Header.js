@@ -11,7 +11,7 @@ const useStyles = makeStyles({
   }
 });
 
-export default () => {
+const Header = () => {
   const classes = useStyles();
   return (
     <AppBar position="static">
@@ -23,3 +23,4 @@ export default () => {
     </AppBar>
   );
 };
+export default Header;

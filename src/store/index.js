@@ -8,7 +8,7 @@ import createSagaMiddleware from "redux-saga";
 import sagas from "./sagas";
 import dataReducer from "./reducers/Data"
 
-export default () => {
+const Store = () => {
   const rootReducer = combineReducers({
     data: dataReducer
   });
@@ -22,3 +22,5 @@ export default () => {
 
   return store;
 };
+
+export default Store;

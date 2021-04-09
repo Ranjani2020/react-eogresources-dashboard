@@ -8,7 +8,8 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default ({ children }) => {
+const Wrapper = ({ children }) => {
   const classes = useStyles();
   return <div className={classes.wrapper}>{children}</div>;
 };
+export default Wrapper;

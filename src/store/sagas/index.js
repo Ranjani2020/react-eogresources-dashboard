@@ -1,3 +1,5 @@
 import ApiErrors from "./ApiErrors";
 
-export default [...ApiErrors];
+const sagas = [...ApiErrors];
+
+export default sagas;
